@@ -3,31 +3,62 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package gui;
+package project3gui;
+
+import static project3gui.ProcessCommands.read;
+import static project3gui.ProcessCommands.readFile;
+import static project3gui.ProcessCommands.total;
+import static project3gui.ProcessCommands.writeFile;
+import java.util.ArrayList;
 
 /**
  *
  * @author KinkyKat
  */
 public class SysAdmin extends Login {
-    
-    public SysAdmin(String username, String password, Person person) {
-        super(username, password, person);
-    }
-    Person Josh = new Person("Josh",54050255,"jophus@aim.com");
-    SysAdmin JoshAdmin = new SysAdmin("abc","123",Josh);
-    
-    public OfficeManager addOfficeManager(String username, String password, Person p){
-        OfficeManager o = new OfficeManager(username,password,p);
-        return o;
+    static ArrayList<Login> accounts = new ArrayList<>();
+    public SysAdmin( String username, String password) {
+        super(username, password);
     }
     
-    public WHManager addWHManager(String username, String password, Person p){
-        WHManager w = new WHManager(username,password,p);
-        return w;
+    public static void addOfficeManager(String fName, String lName, String email, String username, String password){
+        OfficeManager o = new OfficeManager(fName, lName,  email, username, password);
+        accounts.add(o);
     }
-    public SalesAssociate addSalesAssociate(String username, String password, Person p){
-        SalesAssociate a = new SalesAssociate(username,password,p);
-        return a;
+    
+    public static void addWHManager(String fName, String lName, String email,String username, String password){
+        WHManager w = new WHManager(fName, lName,  email, username, password);
+        accounts.add(w);
     }
-}
+    
+    public static void addSalesAssociate(String fName, String lName, String email,String username, String password){
+        SalesAssociate a = new SalesAssociate(fName, lName,  email, username, password);
+        accounts.add(a);
+    }
+    
+    public static void deleteAccount(String username){
+        for(int i = 0;i < accounts.size(); i ++){
+            if(accounts.get(i).getName().equals(username)){
+                accounts.remove(i);
+            }
+        }
+    }
+    
+    @Override
+    public void resetPassword(String username){
+         for(int i = 0;i < accounts.size(); i ++){
+            if(accounts.get(i).getName().equals(username)){
+                accounts.get(i).setPassword("password");
+            }
+         }   
+    }
+    
+        public static void addSalesVan(String filename) {
+            ArrayList<BikePart> blank = new ArrayList<>();
+            total = read(blank, total);
+            writeFile(filename, blank);
+            blank = readFile(filename);
+            total = read(blank, total);
+            
+        }
+    }

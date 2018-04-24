@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="555.0" prefWidth="703.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project3gui.FXMLDocumentController">
+   <children>
+      <TabPane layoutY="-1.0" prefHeight="555.0" prefWidth="704.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="loginTab" text="Login">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button layoutX="330.0" layoutY="365.0" mnemonicParsing="false" onAction="#loginLogin" text="Login" />
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="144.0" layoutY="14.0" prefHeight="73.0" prefWidth="417.0" text="Welcome to Gusty`s Bikeparts">
+                           <font>
+                              <Font size="28.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="168.0" layoutY="119.0" prefHeight="56.0" prefWidth="325.0" text="Please enter your username and password">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="180.0" layoutY="246.0" prefHeight="17.0" prefWidth="58.0" text="Username" />
+                        <Label layoutX="180.0" layoutY="328.0" prefHeight="17.0" prefWidth="63.0" text="Password" />
+                        <TextField fx:id="loginUsername" layoutX="279.0" layoutY="242.0" promptText="username" />
+                        <TextField fx:id="loginPassword" layoutX="278.0" layoutY="324.0" promptText="password" />
+                        <TextArea fx:id="loginTextArea" layoutX="494.0" layoutY="191.0" prefHeight="200.0" prefWidth="200.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab fx:id="sysAdminTab" text="SystemAdmin">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button layoutX="631.0" layoutY="479.0" mnemonicParsing="false" onAction="#sysLogout" text="Logout" />
+                        <Label layoutX="126.0" layoutY="14.0" text="Create Account" />
+                        <Label layoutX="14.0" layoutY="51.0" text="First Name" />
+                        <Label layoutX="14.0" layoutY="97.0" text="Last Name" />
+                        <Label layoutX="14.0" layoutY="147.0" text="Email" />
+                        <Label layoutX="14.0" layoutY="198.0" text="UserName" />
+                        <Label layoutX="14.0" layoutY="245.0" text="Password" />
+                        <Button layoutX="167.0" layoutY="285.0" mnemonicParsing="false" onAction="#sysAddWarehouseManager" text="Add Warehouse Manager" />
+                        <TextArea fx:id="sysOutput" layoutX="479.0" layoutY="32.0" prefHeight="200.0" prefWidth="200.0" />
+                        <TextField fx:id="sysFirstName" layoutX="94.0" layoutY="47.0" promptText="first name" />
+                        <TextField fx:id="sysLastName" layoutX="94.0" layoutY="93.0" promptText="last name" />
+                        <TextField fx:id="sysEmail" layoutX="94.0" layoutY="143.0" promptText="email" />
+                        <TextField fx:id="sysUsername" layoutX="94.0" layoutY="194.0" promptText="username" />
+                        <TextField fx:id="sysPassword" layoutX="94.0" layoutY="241.0" promptText="password" />
+                        <Button layoutX="20.0" layoutY="285.0" mnemonicParsing="false" onAction="#sysAddOfficemanager" text="Add Office Manager" />
+                        <Button layoutX="94.0" layoutY="337.0" mnemonicParsing="false" onAction="#sysAddSalesAssociate" text="Add Sales Associate" />
+                        <Label layoutX="552.0" layoutY="14.0" text="Output" />
+                        <Label layoutX="533.0" layoutY="276.0" text="Add Sales Van" />
+                        <TextField fx:id="sysVanName" layoutX="497.0" layoutY="311.0" promptText="vanname.txt" />
+                        <Label layoutX="426.0" layoutY="315.0" text="Van Name" />
+                        <Button layoutX="541.0" layoutY="350.0" mnemonicParsing="false" onAction="#sysAddVan" text="Add van" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="officeManagerTab" text="OfficeManager">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button layoutX="620.0" layoutY="468.0" mnemonicParsing="false" onAction="#officeManagerLogout" text="Logout" />
+                        <Label layoutX="557.0" layoutY="14.0" text="Output" />
+                        <TextArea fx:id="officeOutput" layoutX="500.0" layoutY="32.0" prefHeight="200.0" prefWidth="176.0" />
+                        <Label layoutX="160.0" layoutY="14.0" text="Examine Part" />
+                        <Label layoutX="5.0" layoutY="44.0" text="By Part Name" />
+                        <Label layoutX="5.0" layoutY="93.0" text="By Part Number" />
+                        <TextField fx:id="officePartName" layoutX="115.0" layoutY="39.0" prefHeight="26.0" prefWidth="158.0" promptText="part name" />
+                        <TextField fx:id="officePartNumber" layoutX="114.0" layoutY="88.0" prefHeight="26.0" prefWidth="159.0" promptText="part number" />
+                        <Button layoutX="162.0" layoutY="132.0" mnemonicParsing="false" onAction="#officeFindPart" text="Find Part" />
+                        <Label layoutX="320.0" layoutY="14.0" text="Warehouse Stock" />
+                        <Button layoutX="304.0" layoutY="40.0" mnemonicParsing="false" onAction="#officeFindLow" text="Find Low Stock Parts" />
+                        <Label layoutX="321.0" layoutY="79.0" text="Order More Parts" />
+                        <TextField fx:id="officeHowManyParts" layoutX="324.0" layoutY="111.0" prefHeight="26.0" prefWidth="98.0" promptText="num parts" />
+                        <Button layoutX="318.0" layoutY="145.0" mnemonicParsing="false" onAction="#officeOrderParts" text="Order the parts" />
+                        <Label layoutX="91.0" layoutY="171.0" text="View Sales Invoice for Associates" />
+                        <TextField fx:id="officeEnterAssociate" layoutX="115.0" layoutY="206.0" prefHeight="26.0" prefWidth="168.0" promptText="enter associate name" />
+                        <TextField fx:id="officeEnterAssociateDates" layoutX="115.0" layoutY="249.0" prefHeight="26.0" prefWidth="167.0" promptText="dd/mm/yyyy,dd/mm/yyyy" />
+                        <Label layoutX="6.0" layoutY="211.0" text="Enter Associate " />
+                        <Label layoutX="5.0" layoutY="254.0" text="Enter Two Dates" />
+                        <Label layoutX="90.0" layoutY="321.0" text="View Sales Invoice for Customers" />
+                        <Button layoutX="152.0" layoutY="286.0" mnemonicParsing="false" onAction="#officeViewAssociateInvoice" text="View Invoice" />
+                        <Label layoutX="6.0" layoutY="355.0" text="Enter Customer" />
+                        <Label layoutX="5.0" layoutY="393.0" text="Enter Two Dates" />
+                        <TextField fx:id="officeEnterCustomer" layoutX="116.0" layoutY="350.0" prefHeight="26.0" prefWidth="166.0" promptText="enter customer name" />
+                        <TextField fx:id="officeEnterCustomerDates" layoutX="115.0" layoutY="388.0" prefHeight="26.0" prefWidth="168.0" promptText="dd/mm/yyyy,dd/mm/yyyy" />
+                        <Button layoutX="153.0" layoutY="425.0" mnemonicParsing="false" onAction="#officeViewCustomerInvoice" text="View Invoice" />
+                        <Label layoutX="523.0" layoutY="254.0" text="Pay Associate" />
+                        <Label layoutX="373.0" layoutY="290.0" text="Associate Name" />
+                        <Label layoutX="359.0" layoutY="330.0" text="Start Date, End Date" />
+                        <TextField fx:id="officePayName" layoutX="502.0" layoutY="286.0" promptText="associate name" />
+                        <TextField fx:id="officeStartEnd" layoutX="502.0" layoutY="326.0" promptText="dd/mm/yyyy,dd/mm/yyyy" />
+                        <Button layoutX="532.0" layoutY="360.0" mnemonicParsing="false" onAction="#officePayAssociate" text="Pay Associate" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="warehouseManagerTab" text="WarehouseManager">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button layoutX="623.0" layoutY="476.0" mnemonicParsing="false" onAction="#warehouseManagerLogout" text="Logout" />
+                        <TextArea fx:id="wareOutput" layoutX="477.0" layoutY="32.0" prefHeight="200.0" prefWidth="200.0" />
+                        <Label layoutX="558.0" layoutY="14.0" text="Output" />
+                        <Label layoutX="129.0" layoutY="14.0" text="Update Inventory" />
+                        <Label layoutX="26.0" layoutY="42.0" text="Add File" />
+                        <TextField fx:id="wareAddFile" layoutX="101.0" layoutY="38.0" promptText="add filename.txt" />
+                        <Button layoutX="145.0" layoutY="76.0" mnemonicParsing="false" onAction="#wareAddFile" text="Add File" />
+                        <Label layoutX="132.0" layoutY="143.0" text="Examine a Part" />
+                        <Label layoutX="24.0" layoutY="169.0" text="By Name" />
+                        <Label layoutX="24.0" layoutY="215.0" text="By Number" />
+                        <TextField fx:id="wareByName" layoutX="101.0" layoutY="165.0" promptText="enter part name" />
+                        <TextField fx:id="wareByNumber" layoutX="101.0" layoutY="211.0" promptText="enter part number" />
+                        <Button layoutX="127.0" layoutY="250.0" mnemonicParsing="false" onAction="#wareFindPart" text="Find Part Info" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="salesAssociateTab" text="SalesAssociate">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button layoutX="624.0" layoutY="469.0" mnemonicParsing="false" onAction="#salesAssociateLogout" text="Logout" />
+                        <Label layoutX="559.0" layoutY="5.0" text="Output" />
+                        <TextArea fx:id="salesAssociateOutput" layoutX="478.0" layoutY="30.0" prefHeight="200.0" prefWidth="200.0" />
+                        <Label layoutX="147.0" layoutY="14.0" text="Load Sales Van" />
+                        <Label layoutX="46.0" layoutY="85.0" text="Choice" />
+                        <Label layoutX="38.0" layoutY="45.0" text="Inventory File" />
+                        <TextField fx:id="salesVanName" layoutX="120.0" layoutY="41.0" promptText="filename.txt" />
+                        <TextField fx:id="salesInvFIle" layoutX="120.0" layoutY="81.0" promptText="yes1/yes1/no1/no2" />
+                        <Button layoutX="161.0" layoutY="118.0" mnemonicParsing="false" onAction="#salesAddParts" text="Add Parts" />
+                        <TextArea fx:id="salesPartsTooAddList" layoutX="380.0" layoutY="367.0" prefHeight="86.0" prefWidth="226.0" promptText="part list" />
+                        <Label layoutX="417.0" layoutY="245.0" text="Distribute Parts to Bike Shop" />
+                        <Label layoutX="18.0" layoutY="167.0" text="Enter Part Followed by Quantity to Sell" />
+                        <TextField fx:id="salesPartnameQuantity" layoutX="419.0" layoutY="271.0" promptText="partname, quantity" />
+                        <Button layoutX="373.0" layoutY="317.0" mnemonicParsing="false" onAction="#salesAddPartToSell" text="Add Part to Sell List" />
+                        <Button layoutX="513.0" layoutY="317.0" mnemonicParsing="false" onAction="#salesClearPart" text="Clear Last Part" />
+                        <Button layoutX="454.0" layoutY="469.0" mnemonicParsing="false" onAction="#salesSellPart" text="Sell Part List" />
+                        <TextArea fx:id="salesPartsList" layoutX="17.0" layoutY="229.0" prefHeight="256.0" prefWidth="203.0" />
+                        <Label layoutX="85.0" layoutY="200.0" text="Parts List" />
+                        <TextField fx:id="salesIInvName" layoutX="236.0" layoutY="240.0" prefHeight="26.0" prefWidth="114.0" promptText="inventoryname.txt" />
+                        <Label layoutX="252.0" layoutY="209.0" text="Parts to Display" />
+                        <Button layoutX="255.0" layoutY="284.0" mnemonicParsing="false" onAction="#salesShowParts" text="Show parts" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="passwordResetTab" text="PasswordReset">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="34.0" layoutY="57.0" text="New Email" />
+                        <Label layoutX="34.0" layoutY="97.0" text="New Password" />
+                        <TextField fx:id="passwordEmail" layoutX="146.0" layoutY="53.0" promptText="new email" />
+                        <TextField fx:id="passwordNewPass" layoutX="146.0" layoutY="93.0" promptText="new password" />
+                        <Button layoutX="171.0" layoutY="150.0" mnemonicParsing="false" onAction="#passResetPass" text="Reset password" />
+                        <Button layoutX="620.0" layoutY="469.0" mnemonicParsing="false" onAction="#passLogOut" text="Logout" />
+                        <TextArea fx:id="passOutput" layoutX="490.0" layoutY="34.0" prefHeight="200.0" prefWidth="200.0" />
+                        <Label layoutX="576.0" layoutY="6.0" text="Output" />
+                        <Label layoutX="174.0" layoutY="25.0" text="Reset Password" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

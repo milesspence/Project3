@@ -3,7 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package gui;
+package project3gui;
+
 
 import java.util.ArrayList;
 
@@ -24,13 +25,23 @@ public class AllWareHouses extends WareHouse {
     }
 
     public WareHouse findWareHouse(String name) {
-       for(WareHouse w: warehouses) {
-           if (w.getWareHouseName().equals(name)) {
-               return w;
+       for(int i = 0; i < warehouses.size(); i ++) {
+           if (warehouses.get(i).getWareHouseName().equals(name)) {
+             WareHouse p = warehouses.get(i);  
+             return p;
            }
        }
-       return null;
-   }
+        return null;
+    }
     
+    public BikePart findBPNameByWarehouse(String warehouseName, String bpName) {
+       for(WareHouse W : warehouses){
+        for(BikePart bp: whDB) {
+           if (bp.getName().equals(name)) {
+               return bp;
+           }
+        }
 }
-
+        return null;
+    }
+}
