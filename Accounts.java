@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package project3gui;
+package gui;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
-import project3gui.Login;
+
 
 /**
  *
@@ -24,7 +24,7 @@ public class Accounts  {
     
     public String validate(String userName, String password) {
         for (int i = 0; i < accounts.size(); i++) {
-            if (accounts.get(i).getName().equals(userName) && accounts.get(i).getPassword().equals(password)) {
+            if (accounts.get(i).getUserName().equals(userName) && accounts.get(i).getPassword().equals(password)) {
     }
   }
         return "Logged in";
@@ -57,7 +57,7 @@ public class Accounts  {
                 String line = read.nextLine();
                 String regExp = ",";
                 String[] pv = line.split(regExp);
-                Login l = new Login(pv[0],pv[1],pv[2],pv[3],pv[4]);
+                Login l = new Login(pv[0],pv[1]);
                 retList.add(l);
             }
         } catch (FileNotFoundException e) {

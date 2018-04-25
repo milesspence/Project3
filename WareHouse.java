@@ -1,4 +1,4 @@
-package project3gui;
+package gui;
 import java.io.Serializable;
 import java.util.ArrayList;
 /**
@@ -12,6 +12,7 @@ public class WareHouse implements Serializable{
    /**
     * 
     * @param name name of the warehouse
+    * @param whDB arraylist of bikeparts warehouse contains
     */
    public WareHouse(String name, String filename) {
       this.name = name;

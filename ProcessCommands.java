@@ -1,4 +1,4 @@
-package project3gui;
+package gui;
 
 import java.io.File;
 import java.io.FileNotFoundException;

@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package project3gui;
+package gui;
 
 /**
  *
  * @author KinkyKat
  */
-public class Person implements Interface {
+public class Person {
     String fName;
     String lName;
     String email;
@@ -19,8 +19,8 @@ public class Person implements Interface {
         this.lName = lName;
         this.email = email;
     }
-    @Override
-    public String getName(){
+    
+    public String getFName(){
         return fName;
     }
     public String getLName(){

@@ -140,18 +140,18 @@
                         <TextField fx:id="salesVanName" layoutX="120.0" layoutY="41.0" promptText="filename.txt" />
                         <TextField fx:id="salesInvFIle" layoutX="120.0" layoutY="81.0" promptText="yes1/yes1/no1/no2" />
                         <Button layoutX="161.0" layoutY="118.0" mnemonicParsing="false" onAction="#salesAddParts" text="Add Parts" />
-                        <TextArea fx:id="salesPartsTooAddList" layoutX="380.0" layoutY="367.0" prefHeight="86.0" prefWidth="226.0" promptText="part list" />
-                        <Label layoutX="417.0" layoutY="245.0" text="Distribute Parts to Bike Shop" />
-                        <Label layoutX="18.0" layoutY="167.0" text="Enter Part Followed by Quantity to Sell" />
-                        <TextField fx:id="salesPartnameQuantity" layoutX="419.0" layoutY="271.0" promptText="partname, quantity" />
-                        <Button layoutX="373.0" layoutY="317.0" mnemonicParsing="false" onAction="#salesAddPartToSell" text="Add Part to Sell List" />
-                        <Button layoutX="513.0" layoutY="317.0" mnemonicParsing="false" onAction="#salesClearPart" text="Clear Last Part" />
-                        <Button layoutX="454.0" layoutY="469.0" mnemonicParsing="false" onAction="#salesSellPart" text="Sell Part List" />
-                        <TextArea fx:id="salesPartsList" layoutX="17.0" layoutY="229.0" prefHeight="256.0" prefWidth="203.0" />
-                        <Label layoutX="85.0" layoutY="200.0" text="Parts List" />
-                        <TextField fx:id="salesIInvName" layoutX="236.0" layoutY="240.0" prefHeight="26.0" prefWidth="114.0" promptText="inventoryname.txt" />
-                        <Label layoutX="252.0" layoutY="209.0" text="Parts to Display" />
-                        <Button layoutX="255.0" layoutY="284.0" mnemonicParsing="false" onAction="#salesShowParts" text="Show parts" />
+                        <TextArea fx:id="salesPartsTooAddList" layoutX="266.0" layoutY="317.0" prefHeight="86.0" prefWidth="226.0" promptText="part list" />
+                        <Label layoutX="303.0" layoutY="212.0" text="Distribute Parts to Bike Shop" />
+                        <Label layoutX="17.0" layoutY="245.0" text="Enter Part Followed by Quantity to Sell" />
+                        <TextField fx:id="salesPartnameQuantity" layoutX="305.0" layoutY="241.0" promptText="partname, quantity" />
+                        <Button layoutX="259.0" layoutY="284.0" mnemonicParsing="false" onAction="#salesAddPartToSell" text="Add Part to Sell List" />
+                        <Button layoutX="409.0" layoutY="284.0" mnemonicParsing="false" onAction="#salesClearPart" text="Clear Last Part" />
+                        <Button layoutX="339.0" layoutY="419.0" mnemonicParsing="false" onAction="#salesSellPart" text="Sell Part List" />
+                        <TextArea fx:id="salesPartsList" layoutX="17.0" layoutY="297.0" prefHeight="188.0" prefWidth="114.0" />
+                        <Label layoutX="50.0" layoutY="275.0" text="Parts List" />
+                        <TextField fx:id="salesIInvName" layoutX="139.0" layoutY="317.0" prefHeight="26.0" prefWidth="114.0" promptText="inventoryname.txt" />
+                        <Label layoutX="155.0" layoutY="288.0" text="Parts to Display" />
+                        <Button layoutX="158.0" layoutY="354.0" mnemonicParsing="false" onAction="#salesShowParts" text="Show parts" />
                      </children>
                   </AnchorPane>
               </content>
