@@ -1,5 +1,13 @@
-package project3gui;
+package gui;
 
+import static gui.Invoices.invoices;
+import static gui.ProcessCommands.IDS;
+import static gui.ProcessCommands.read;
+import static gui.ProcessCommands.readFile;
+import static gui.ProcessCommands.readFileVan;
+import static gui.ProcessCommands.total;
+import static gui.ProcessCommands.writeFile;
+import static gui.SysAdmin.addOfficeManager;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Date;
@@ -11,18 +19,18 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import static project3gui.ProcessCommands.IDS;
-import static project3gui.ProcessCommands.read;
-import static project3gui.ProcessCommands.readFile;
-import static project3gui.ProcessCommands.total;
-import static project3gui.ProcessCommands.writeFile;
-import static project3gui.SysAdmin.accounts;
-import static project3gui.SysAdmin.addOfficeManager;
-import static project3gui.Invoices.invoices;
-import static project3gui.ProcessCommands.IDS;
-import static project3gui.ProcessCommands.readFile;
-import static project3gui.ProcessCommands.readFileVan;
-import static project3gui.ProcessCommands.writeFile;
+import static gui.ProcessCommands.IDS;
+import static gui.ProcessCommands.read;
+import static gui.ProcessCommands.readFile;
+import static gui.ProcessCommands.total;
+import static gui.ProcessCommands.writeFile;
+import static gui.SysAdmin.accounts;
+import static gui.SysAdmin.addOfficeManager;
+import static gui.Invoices.invoices;
+import static gui.ProcessCommands.IDS;
+import static gui.ProcessCommands.readFile;
+import static gui.ProcessCommands.readFileVan;
+import static gui.ProcessCommands.writeFile;
 
 public class FXMLDocumentController implements Initializable {
 
@@ -145,7 +153,7 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private TextArea loginTextArea;
-
+    
     @FXML
     private TextArea salesAssociateOutput;
 
@@ -165,7 +173,7 @@ public class FXMLDocumentController implements Initializable {
         String password = loginPassword.getText();
         Login l = new Login(userName, password);
         ArrayList<Login> accounts = new ArrayList<>();
-        SysAdmin admin = new SysAdmin("admin", "minda");
+        SysAdmin admin = new SysAdmin("","","","admin", "minda");
         SysAdmin.accounts.add(admin);
         if (l instanceof SysAdmin) {
             loginTab.setDisable(true);
@@ -310,17 +318,7 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     void salesAddPartToSell(ActionEvent event) {
-        String[] info = salesPartnameQuantity.getText().split(",");
-        BikePart bp = new BikePart(info[0], Integer.parseInt(info[1]));
-        ArrayList<BikePart> names = readFile("warehouseDB.txt");
-        for (int i = 0; i < names.size(); i++) {
-//            System.out.println(b.getName() + " " + bp.getName());
-            if (bp.getName().equals(names.get(i).getName())) {
-                salesPartsTooAddList.setText(bp.getName() + " " + bp.getQuantity());
-            } else {
-                salesPartsTooAddList.setText("Non-existent in main warehouse");
-            }
-        }
+
     }
 
     @FXML
@@ -341,8 +339,7 @@ public class FXMLDocumentController implements Initializable {
         }
 
         ArrayList<BikePart> second = readFile(words.get(1) + ".txt"); //arraylist that you write to
-        ArrayList<BikePart> first = new ArrayList<>();
-        first = readFile(words.get(0) + ".txt");   //arraylist that you get parts from
+        ArrayList<BikePart> first = readFile(words.get(0) + ".txt");   //arraylist that you get parts from
         ArrayList<BikePart> help = readFile(words.get(0) + ".txt");
         int count = 0;
         int counter = 0;
@@ -438,7 +435,7 @@ public class FXMLDocumentController implements Initializable {
             writeFile(words.get(0) + ".txt", help);
         }
         if (count > 0) {
-            salesAssociateOutput.setText("part(s) moved");
+            salesAssociateOutput.setText("parts moved");
         } else {
             salesAssociateOutput.setText("part moved");
         }
@@ -466,12 +463,7 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     void salesShowParts(ActionEvent event) {
-        String fileName = salesIInvName.getText();
-        ArrayList<BikePart> parts = readFile(fileName);
-        for (BikePart bp : parts) {
-            salesPartsList.setText(bp.getName() + " " + bp.getRightPrice() + "\n");
-            System.out.println(bp.getName() + bp.getRightPrice());
-        }
+
     }
 
     @FXML
