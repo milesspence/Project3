@@ -140,18 +140,18 @@
                         <TextField fx:id="salesVanName" layoutX="120.0" layoutY="41.0" promptText="filename.txt" />
                         <TextField fx:id="salesInvFIle" layoutX="120.0" layoutY="81.0" promptText="yes1/yes1/no1/no2" />
                         <Button layoutX="161.0" layoutY="118.0" mnemonicParsing="false" onAction="#salesAddParts" text="Add Parts" />
-                        <TextArea fx:id="salesPartsTooAddList" layoutX="266.0" layoutY="317.0" prefHeight="86.0" prefWidth="226.0" promptText="part list" />
-                        <Label layoutX="303.0" layoutY="212.0" text="Distribute Parts to Bike Shop" />
-                        <Label layoutX="17.0" layoutY="245.0" text="Enter Part Followed by Quantity to Sell" />
-                        <TextField fx:id="salesPartnameQuantity" layoutX="305.0" layoutY="241.0" promptText="partname, quantity" />
-                        <Button layoutX="259.0" layoutY="284.0" mnemonicParsing="false" onAction="#salesAddPartToSell" text="Add Part to Sell List" />
-                        <Button layoutX="409.0" layoutY="284.0" mnemonicParsing="false" onAction="#salesClearPart" text="Clear Last Part" />
-                        <Button layoutX="339.0" layoutY="419.0" mnemonicParsing="false" onAction="#salesSellPart" text="Sell Part List" />
-                        <TextArea fx:id="salesPartsList" layoutX="17.0" layoutY="297.0" prefHeight="188.0" prefWidth="114.0" />
-                        <Label layoutX="50.0" layoutY="275.0" text="Parts List" />
-                        <TextField fx:id="salesIInvName" layoutX="139.0" layoutY="317.0" prefHeight="26.0" prefWidth="114.0" promptText="inventoryname.txt" />
-                        <Label layoutX="155.0" layoutY="288.0" text="Parts to Display" />
-                        <Button layoutX="158.0" layoutY="354.0" mnemonicParsing="false" onAction="#salesShowParts" text="Show parts" />
+                        <TextArea fx:id="salesPartsTooAddList" layoutX="380.0" layoutY="367.0" prefHeight="86.0" prefWidth="226.0" promptText="part list" />
+                        <Label layoutX="417.0" layoutY="245.0" text="Distribute Parts to Bike Shop" />
+                        <Label layoutX="18.0" layoutY="167.0" text="Enter Part Followed by Quantity to Sell" />
+                        <TextField fx:id="salesPartnameQuantity" layoutX="419.0" layoutY="271.0" promptText="partname, quantity" />
+                        <Button layoutX="373.0" layoutY="317.0" mnemonicParsing="false" onAction="#salesAddPartToSell" text="Add Part to Sell List" />
+                        <Button layoutX="513.0" layoutY="317.0" mnemonicParsing="false" onAction="#salesClearPart" text="Clear Last Part" />
+                        <Button layoutX="454.0" layoutY="469.0" mnemonicParsing="false" onAction="#salesSellPart" text="Sell Part List" />
+                        <TextArea fx:id="salesPartsList" layoutX="17.0" layoutY="229.0" prefHeight="256.0" prefWidth="203.0" />
+                        <Label layoutX="85.0" layoutY="200.0" text="Parts List" />
+                        <TextField fx:id="salesIInvName" layoutX="236.0" layoutY="240.0" prefHeight="26.0" prefWidth="114.0" promptText="inventoryname.txt" />
+                        <Label layoutX="252.0" layoutY="209.0" text="Parts to Display" />
+                        <Button layoutX="255.0" layoutY="284.0" mnemonicParsing="false" onAction="#salesShowParts" text="Show parts" />
                      </children>
                   </AnchorPane>
               </content>
@@ -160,15 +160,18 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Label layoutX="34.0" layoutY="57.0" text="New Email" />
-                        <Label layoutX="34.0" layoutY="97.0" text="New Password" />
-                        <TextField fx:id="passwordEmail" layoutX="146.0" layoutY="53.0" promptText="new email" />
-                        <TextField fx:id="passwordNewPass" layoutX="146.0" layoutY="93.0" promptText="new password" />
-                        <Button layoutX="171.0" layoutY="150.0" mnemonicParsing="false" onAction="#passResetPass" text="Reset password" />
+                        <Label layoutX="45.0" layoutY="138.0" text="New Email" />
+                        <Label layoutX="34.0" layoutY="173.0" text="New Password" />
+                        <TextField fx:id="passwordEmail" layoutX="146.0" layoutY="134.0" promptText="new email" />
+                        <TextField fx:id="passwordNewPass" layoutX="146.0" layoutY="169.0" promptText="new password" />
+                        <Button layoutX="87.0" layoutY="222.0" mnemonicParsing="false" onAction="#passResetPass" prefHeight="0.0" prefWidth="99.0" text="Reset password" />
                         <Button layoutX="620.0" layoutY="469.0" mnemonicParsing="false" onAction="#passLogOut" text="Logout" />
                         <TextArea fx:id="passOutput" layoutX="490.0" layoutY="34.0" prefHeight="200.0" prefWidth="200.0" />
                         <Label layoutX="576.0" layoutY="6.0" text="Output" />
                         <Label layoutX="174.0" layoutY="25.0" text="Reset Password" />
+                        <TextField fx:id="resetUsernName" layoutX="146.0" layoutY="59.0" promptText="username" />
+                        <Label layoutX="45.0" layoutY="63.0" text="Enter username" />
+                        <Button layoutX="221.0" layoutY="222.0" mnemonicParsing="false" onAction="#resetEmail" text="Reset Email" />
                      </children>
                   </AnchorPane>
               </content>

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package gui;
+package project3gui;
 
 
 import java.util.Date;
@@ -60,11 +60,7 @@ public class Invoice {
         return totalCost = b.getQuantity() * b.getRightPrice();
         }
     public String toString(){
-        return customer + "," + d.toString() + "," + empRecieved + "," + b + "," + salesAssociate + "," + totCost;
-    }
-   
-    public String correctToString(){
-        return b.getName() + b.getNum() + b.getRightPrice() + b.getQuantity() + b.getQuantity()*b.getRightPrice();
+        return customer + "$" + d + "," + empRecieved + "," + b + "," + salesAssociate + "," + totCost;
     }
     
 }

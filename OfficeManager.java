@@ -3,12 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package gui;
+package project3gui;
 
-import static gui.ProcessCommands.IDS;
-import java.io.Serializable;
+import static project3gui.ProcessCommands.IDS;
 import java.util.ArrayList;
-import java.util.Date;
 
 
 /**
@@ -16,11 +14,11 @@ import java.util.Date;
  * @author KinkyKat
  */
 public class OfficeManager extends Login {
-    String username;
-    String password;
-    String fName;
-    String lName;
-    String email;
+    private String username;
+    private String password;
+    private String fName;
+    private String lName;
+    private String email;
     ArrayList<Login> invoices;
     public OfficeManager(String fName, String lName, String email, String username, String password) {
         super(username, password);
@@ -53,5 +51,4 @@ public class OfficeManager extends Login {
         }
         return "Parts to be ordered";
     }
-    
   }

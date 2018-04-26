@@ -1,13 +1,5 @@
-package gui;
+package project3gui;
 
-import static gui.Invoices.invoices;
-import static gui.ProcessCommands.IDS;
-import static gui.ProcessCommands.read;
-import static gui.ProcessCommands.readFile;
-import static gui.ProcessCommands.readFileVan;
-import static gui.ProcessCommands.total;
-import static gui.ProcessCommands.writeFile;
-import static gui.SysAdmin.addOfficeManager;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Date;
@@ -19,18 +11,19 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import static gui.ProcessCommands.IDS;
-import static gui.ProcessCommands.read;
-import static gui.ProcessCommands.readFile;
-import static gui.ProcessCommands.total;
-import static gui.ProcessCommands.writeFile;
-import static gui.SysAdmin.accounts;
-import static gui.SysAdmin.addOfficeManager;
-import static gui.Invoices.invoices;
-import static gui.ProcessCommands.IDS;
-import static gui.ProcessCommands.readFile;
-import static gui.ProcessCommands.readFileVan;
-import static gui.ProcessCommands.writeFile;
+import static project3gui.Accounts.writeLoginFile;
+import static project3gui.ProcessCommands.IDS;
+import static project3gui.ProcessCommands.read;
+import static project3gui.ProcessCommands.readFile;
+import static project3gui.ProcessCommands.total;
+import static project3gui.ProcessCommands.writeFile;
+import static project3gui.SysAdmin.accounts;
+import static project3gui.SysAdmin.addOfficeManager;
+import static project3gui.Invoices.invoices;
+import static project3gui.ProcessCommands.IDS;
+import static project3gui.ProcessCommands.readFile;
+import static project3gui.ProcessCommands.readFileVan;
+import static project3gui.ProcessCommands.writeFile;
 
 public class FXMLDocumentController implements Initializable {
 
@@ -153,9 +146,12 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private TextArea loginTextArea;
-    
+
     @FXML
     private TextArea salesAssociateOutput;
+    
+     @FXML
+    private TextField resetUserName;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -164,59 +160,58 @@ public class FXMLDocumentController implements Initializable {
         officeManagerTab.setDisable(false);
         warehouseManagerTab.setDisable(false);
         passwordResetTab.setDisable(false);
-        salesAssociateTab.setDisable(false);
+        salesAssociateTab.setDisable(false);      
     }
 
     @FXML
     void loginLogin(ActionEvent event) {
         String userName = loginUsername.getText();
         String password = loginPassword.getText();
-        Login l = new Login(userName, password);
-        ArrayList<Login> accounts = new ArrayList<>();
-        SysAdmin admin = new SysAdmin("","","","admin", "minda");
-        SysAdmin.accounts.add(admin);
-        if (l instanceof SysAdmin) {
-            loginTab.setDisable(true);
+        Login l;
+        ArrayList<Login> acc = new ArrayList<>();
+        SysAdmin admin = new SysAdmin("admin","admin","admin","admin","minda");
+        WHManager josh = new WHManager("josh","brun","jophus","josh123","pass2");
+        OfficeManager miles = new OfficeManager("miles","spen","spence","miles123","pass3");
+        SalesAssociate thomas = new SalesAssociate("thomas","hud","hudley","thomas123","pass4");
+        acc.add(thomas);
+        acc.add(admin);
+        acc.add(miles);
+        acc.add(josh);
+        for(int i = 0; i < acc.size(); i ++){
+            if(acc.get(i).getName().equals(userName) && acc.get(i).getPassword().equals(password)){
+                 l = acc.get(i);    
+            if(l instanceof SysAdmin){
+                loginTab.setDisable(true);
+                sysAdminTab.setDisable(false);
+                officeManagerTab.setDisable(true);
+                warehouseManagerTab.setDisable(true);
+                passwordResetTab.setDisable(false);
+                salesAssociateTab.setDisable(true);   
+            }else if(l instanceof WHManager){
+                loginTab.setDisable(true);
+                sysAdminTab.setDisable(true);
+                officeManagerTab.setDisable(true);
+                warehouseManagerTab.setDisable(false);
+                passwordResetTab.setDisable(false);
+                salesAssociateTab.setDisable(true);   
+            }else if(l instanceof OfficeManager){
+                loginTab.setDisable(true);
+                sysAdminTab.setDisable(true);
+                officeManagerTab.setDisable(false);
+                warehouseManagerTab.setDisable(true);
+                passwordResetTab.setDisable(false);
+                salesAssociateTab.setDisable(true);   
+            }else if(l instanceof SalesAssociate){
+                loginTab.setDisable(true);
+                sysAdminTab.setDisable(true);
+                officeManagerTab.setDisable(true);
+                warehouseManagerTab.setDisable(true);
+                passwordResetTab.setDisable(false);
+                salesAssociateTab.setDisable(false);     
+            }
+            }
         }
-        sysAdminTab.setDisable(false);
-        officeManagerTab.setDisable(true);
-        warehouseManagerTab.setDisable(true);
-        passwordResetTab.setDisable(false);
-        salesAssociateTab.setDisable(true);
-        OfficeManager miles = new OfficeManager("miles", "miles", "miles", "miles", "pass1");
-        SysAdmin.accounts.add(miles);
-        if (l instanceof OfficeManager) {
-            loginTab.setDisable(true);
-        }
-        sysAdminTab.setDisable(true);
-        officeManagerTab.setDisable(false);
-        warehouseManagerTab.setDisable(true);
-        passwordResetTab.setDisable(false);
-        salesAssociateTab.setDisable(true);
-
-        WHManager josh = new WHManager("josh", "josh", "josh", "josh", "pass2");
-        SysAdmin.accounts.add(josh);
-        if (l instanceof WHManager) {
-            loginTab.setDisable(true);
-        }
-        sysAdminTab.setDisable(true);
-        officeManagerTab.setDisable(true);
-        warehouseManagerTab.setDisable(false);
-        passwordResetTab.setDisable(false);
-        salesAssociateTab.setDisable(true);
-
-//        SalesAssociate thomas = new SalesAssociate("thomas","thomas","thomas","thomas","pass3");
-//        SysAdmin.accounts.add(thomas);
-//           if(l instanceof SalesAssociate)
-//        loginTab.setDisable(true);
-//        sysAdminTab.setDisable(true);
-//        officeManagerTab.setDisable(true);
-//        warehouseManagerTab.setDisable(true);
-//        passwordResetTab.setDisable(false);
-//        salesAssociateTab.setDisable(false);
-//            
-    }
-
+        } 
     @FXML
     void officeFindLow(ActionEvent event) {
 
@@ -309,16 +304,33 @@ public class FXMLDocumentController implements Initializable {
         warehouseManagerTab.setDisable(true);
         passwordResetTab.setDisable(true);
         salesAssociateTab.setDisable(true);
+    
     }
 
     @FXML
     void passResetPass(ActionEvent event) {
+        String userName = resetUserName.getText();
+        Accounts.userValidate(userName).setPassword(passwordNewPass.getText());
+    }
+    
+    @FXML
+    void resetEmail(ActionEvent event) {
 
     }
 
     @FXML
     void salesAddPartToSell(ActionEvent event) {
-
+        String[] info = salesPartnameQuantity.getText().split(",");
+        BikePart bp = new BikePart(info[0], Integer.parseInt(info[1]));
+        ArrayList<BikePart> names = readFile("warehouseDB.txt");
+        for (int i = 0; i < names.size(); i++) {
+//            System.out.println(b.getName() + " " + bp.getName());
+            if (bp.getName().equals(names.get(i).getName())) {
+                salesPartsTooAddList.setText(bp.getName() + " " + bp.getQuantity());
+            } else {
+                salesPartsTooAddList.setText("Non-existent in main warehouse");
+            }
+        }
     }
 
     @FXML
@@ -339,7 +351,8 @@ public class FXMLDocumentController implements Initializable {
         }
 
         ArrayList<BikePart> second = readFile(words.get(1) + ".txt"); //arraylist that you write to
-        ArrayList<BikePart> first = readFile(words.get(0) + ".txt");   //arraylist that you get parts from
+        ArrayList<BikePart> first = new ArrayList<>();
+        first = readFile(words.get(0) + ".txt");   //arraylist that you get parts from
         ArrayList<BikePart> help = readFile(words.get(0) + ".txt");
         int count = 0;
         int counter = 0;
@@ -435,7 +448,7 @@ public class FXMLDocumentController implements Initializable {
             writeFile(words.get(0) + ".txt", help);
         }
         if (count > 0) {
-            salesAssociateOutput.setText("parts moved");
+            salesAssociateOutput.setText("part(s) moved");
         } else {
             salesAssociateOutput.setText("part moved");
         }
@@ -458,12 +471,19 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     void salesSellPart(ActionEvent event) {
-
+       
+        
+        
     }
 
     @FXML
     void salesShowParts(ActionEvent event) {
-
+        String fileName = salesIInvName.getText();
+        ArrayList<BikePart> parts = readFile(fileName);
+        for (BikePart bp : parts) {
+            salesPartsList.setText(bp.getName() + " " + bp.getRightPrice() + "\n");
+            System.out.println(bp.getName() + bp.getRightPrice());
+        }
     }
 
     @FXML
@@ -473,8 +493,9 @@ public class FXMLDocumentController implements Initializable {
         String email = sysEmail.getText();
         String username = sysUsername.getText();
         String password = sysPassword.getText();
-        addOfficeManager(fName, lName, email, username, password);
+        SysAdmin.addOfficeManager(fName, lName, email, username, password);
         sysOutput.setText("Office Manager Created");
+    
     }
 
     @FXML
@@ -507,6 +528,8 @@ public class FXMLDocumentController implements Initializable {
         warehouseManagerTab.setDisable(true);
         passwordResetTab.setDisable(true);
         salesAssociateTab.setDisable(true);
+        writeLoginFile("Accounts.txt", SysAdmin.accounts);
+    
     }
 
     @FXML

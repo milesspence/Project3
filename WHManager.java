@@ -3,12 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package gui;
+package project3gui;
 
-import static gui.ProcessCommands.IDS;
-import static gui.ProcessCommands.read;
-import static gui.ProcessCommands.readFile;
-import static gui.ProcessCommands.writeFile;
+import static project3gui.ProcessCommands.IDS;
+import static project3gui.ProcessCommands.read;
+import static project3gui.ProcessCommands.readFile;
 import java.util.ArrayList;
 
 /**
@@ -17,18 +16,18 @@ import java.util.ArrayList;
  */
 public class WHManager extends Login {
     
-    public WHManager(String fName, String lName, String email, String username, String password) {
+    public WHManager(String fName, String lName, String email,String username, String password) {
         super(username, password);
     }
-    public static ArrayList<BikePart> total = new ArrayList<BikePart>();
+    public static ArrayList<BikePart> total = new ArrayList<>();
     
     public static void update(String fileName) {
             ArrayList<BikePart> blank = readFile(fileName);
             total = read(blank, total);
- 
+       
     }
     
-    public String examineByPartName(String name) {
+    public static String examineByPartName(String name) {
         for (int i = 0; i < IDS.size(); i++) {
             if (IDS.get(i).getName().equals(name)) {
                 return IDS.get(i).getName() + " " + IDS.get(i).getRightPrice();
