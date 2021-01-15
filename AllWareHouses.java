@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package project3gui;
 
 
@@ -10,10 +5,9 @@ import java.util.ArrayList;
 
 /**
  *
- * @author KinkyKat
+ * @author Miles Spence
  */
 
-// not sure if this should extends WareHouse or not
 public class AllWareHouses extends WareHouse {
     ArrayList<WareHouse> warehouses;
 
