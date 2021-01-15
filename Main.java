@@ -218,7 +218,7 @@ public class Main implements Serializable {
             } else {
                 writeFile("warehouseDB.txt", IDS);
                 System.exit(0);
-            }
+            } 
         }
     }
     
