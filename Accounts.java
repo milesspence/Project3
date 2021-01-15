@@ -16,7 +16,7 @@ import static project3gui.SysAdmin.accounts;
 
 /**
  *
- * @author KinkyKat
+ * @author Miles Spence
  */
 // will have the ablility to determine if a login is a warehouse manager, sales associate, system admin, and office manager
 public class Accounts {
@@ -78,5 +78,4 @@ public class Accounts {
         }
         return retList;
     }
-
 }
