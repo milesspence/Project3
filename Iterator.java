@@ -1,7 +1,7 @@
 package project3;
 
 /**
- * @author miles
+ * @author Miles Spence
  */
 public interface Iterator {
 
