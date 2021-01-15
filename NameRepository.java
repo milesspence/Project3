@@ -3,7 +3,7 @@ package project3;
 import java.util.ArrayList;
 
 /**
- * @author miles
+ * @author Miles Spence
  */
 public class NameRepository implements Container {
 
