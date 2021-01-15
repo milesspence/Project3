@@ -186,5 +186,4 @@ public class BikePart implements Serializable {
     public void setName(String partName) {
         this.partName = partName;
     }
-
 }
