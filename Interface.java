@@ -1,7 +1,7 @@
 package project3gui;
 
 /**
- * @author miles
+ * @author Miles Spence
  */
 public interface Interface {
 
