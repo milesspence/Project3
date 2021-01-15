@@ -15,7 +15,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 /**
- * @author miles
+ * @author Miles Spence
  */
 public class GUI extends Application {
 
@@ -41,5 +41,5 @@ public class GUI extends Application {
      
         launch(args);
     
-}
+    }
 }
